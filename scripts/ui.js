@@ -19,7 +19,7 @@ export const printPokemons = (listPokemons) => {
 
     let habilidadespokemon = "";
     abilities.forEach((item) => {
-      habilidadespokemon += `
+      habilidadespokemon = `
            
             <span class="info-text">${item.ability.name} </span>
             `;

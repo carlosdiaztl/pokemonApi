@@ -36,7 +36,7 @@ export const filtrado =(data)=>{
       
       console.log(filtradofinal);
       const containerPokemons = document.getElementById("container");
-      const printPokemons = (listPokemons) => {
+      const printPokemons2 = (listPokemons) => {
         console.log(listPokemons);
         containerPokemons.innerHTML = "";
         listPokemons.forEach((pokemon) => {
@@ -108,7 +108,8 @@ export const filtrado =(data)=>{
               `;
         });
       };
-      printPokemons(filtradofinal)
+      
+      printPokemons2(filtradofinal)
       
     }
     filtro()

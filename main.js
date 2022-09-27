@@ -1,5 +1,5 @@
 import { getDataUnique, getInfo, filtrado} from "./scripts/process.js";
-
+import { printPokemons } from "./scripts/ui.js";
 
 
 // const esconder = () => {
@@ -24,12 +24,15 @@ const mainFunction = async () => {
   data.forEach((_, index) => {
     data[index].info = newResponse[index];
   });
-  console.log(data);
-
   let datosFiltrar=[]
-  datosFiltrar=data
+  datosFiltrar=data;
   console.log(datosFiltrar);
-  filtrado(datosFiltrar)
+  filtrado(data)
+ 
+
+  
+  
+  
 
 
   // data.splice(1, 19);

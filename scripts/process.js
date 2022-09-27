@@ -1,5 +1,5 @@
 export const getInfo = async () => {
-  const URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
+  const URL = "https://pokeapi.co/api/v2/pokemon/";
   const {
     data: { results },
   } = await axios.get(URL);
@@ -43,7 +43,7 @@ export const filtrado =(data)=>{
           const { info } = pokemon;
           console.log(info);
           const { abilities, types, sprites } = info;
-          console.log(sprites.front_default);
+          ;
       
           let typepokemon = "";
           types.forEach((item) => {

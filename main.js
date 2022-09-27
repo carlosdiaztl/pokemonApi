@@ -26,6 +26,7 @@ const mainFunction = async () => {
     data[index].info = newResponse[index];
   });
   data.splice(6, 14);
+  filterArray("charmander", data);
 };
 
 mainFunction();
@@ -35,9 +36,9 @@ const filterArray = (text, data) => {
   let query = data.filter((element) => element.name === text);
   console.log(query);
 };
-const handleSearch = () => {
-  let q = input.value;
-  filterArray(q);
-};
-btnSearch.addEventListener("click", handleSearch);
-//hola
+// const handleSearch = () => {
+//   let q = input.value;
+//   filterArray(q);
+// };
+// btnSearch.addEventListener("click", handleSearch);
+// //hola

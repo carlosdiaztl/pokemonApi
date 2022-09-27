@@ -31,10 +31,10 @@ export const printPokemons = (listPokemons) => {
                 <figure>
                     <img src="https://static.vecteezy.com/system/resources/previews/001/188/706/original/flame-png.png" alt="llama">
                 </figure>
-                <h2>CHARIZARD ${pokemon.name} </h2>
+                <h2>${pokemon.name} </h2>
             </div>
             <figure class="image-charizard">
-                <img src="${sprites.front_default} " alt="imgdepokemon">
+                <img src="${sprites.other.dream_world.front_default} " alt="imgdepokemon">
             </figure>
         </section>
         <article class="info-pokemon">

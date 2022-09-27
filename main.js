@@ -1,7 +1,6 @@
-import { getDataUnique, getInfo } from "./scripts/process.js";
-import { printPokemons } from "./scripts/ui.js";
-const input = document.getElementsByClassName("input");
-const btnSearch = document.getElementById("btnsearch");
+import { getDataUnique, getInfo, filtrado} from "./scripts/process.js";
+
+
 
 // const esconder = () => {
 //   if (input.classlist.contain("hidden")) {
@@ -25,17 +24,26 @@ const mainFunction = async () => {
   data.forEach((_, index) => {
     data[index].info = newResponse[index];
   });
-  data.splice(6, 14);
-  filterArray("charmander", data);
+  console.log(data);
+
+  let datosFiltrar=[]
+  datosFiltrar=data
+  console.log(datosFiltrar);
+  filtrado(datosFiltrar)
+
+
+  // data.splice(1, 19);
+  // printPokemons(data)
+  // filterArray("charmander", data);
 };
 
 mainFunction();
 // nueva funcion
 
-const filterArray = (text, data) => {
-  let query = data.filter((element) => element.name === text);
-  console.log(query);
-};
+// const filterArray = (text, data) => {
+//   let query = data.filter((element) => element.name === text);
+//   console.log(query);
+// };
 // const handleSearch = () => {
 //   let q = input.value;
 //   filterArray(q);

@@ -1,55 +1,32 @@
-import { getDataUnique, getInfo, filtrado} from "./scripts/process.js";
-import { printPokemons } from "./scripts/ui.js";
+import { getDataUnique} from "./scripts/process.js";
+import {renderponkemon} from "./scripts/ui.js";
 
 
-// const esconder = () => {
-//   if (input.classlist.contain("hidden")) {
-//     input.classlist.remove("hidden");
-//   } else {
-//     input.classlist.add("hidden");
-//   }
-// };
-// btnsearch.addEventListener("click", esconder);
+const filtrado = () => {
+  const input = document.getElementById("inputbarra");
+  const btnSearch = document.getElementById("btnsearch");
+  const busqueda = async () => {
+    let query = input.value;
+    if (query=="") {
+      
+    }else{
+    const URLpokemon = `https://pokeapi.co/api/v2/pokemon/${query}`;
+    let infoPokemon = await getDataUnique(URLpokemon);
+    renderponkemon(infoPokemon)
+    input.value = "";}
+  };
 
-const mainFunction = async () => {
-  let data = await getInfo();
-  let responseInfo = [];
-  data.forEach((element) => {
-    let infoPokemons = getDataUnique(element.url);
-    responseInfo.push(infoPokemons);
-  });
-
-  const newResponse = await Promise.all(responseInfo);
-
-  data.forEach((_, index) => {
-    data[index].info = newResponse[index];
-  });
-  let datosFiltrar=[]
-  datosFiltrar=data;
-  console.log(datosFiltrar);
-  filtrado(data)
- 
-
-  
-  
-  
-
-
-  // data.splice(1, 19);
-  // printPokemons(data)
-  // filterArray("charmander", data);
+  btnSearch.addEventListener("click", busqueda);
 };
+filtrado()
 
-mainFunction();
-// nueva funcion
+document.addEventListener("click",async({ target }) => {
+  if (target.classList.contains('imgfooter')) {
+    const name=target.getAttribute('name')
+    const URLpokemon=`https://pokeapi.co/api/v2/pokemon/${name}`
+    let infoPokemon = await getDataUnique(URLpokemon);
+    renderponkemon(infoPokemon)
+  }
+  
+});
 
-// const filterArray = (text, data) => {
-//   let query = data.filter((element) => element.name === text);
-//   console.log(query);
-// };
-// const handleSearch = () => {
-//   let q = input.value;
-//   filterArray(q);
-// };
-// btnSearch.addEventListener("click", handleSearch);
-// //hola

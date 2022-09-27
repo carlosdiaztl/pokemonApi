@@ -1,5 +1,5 @@
 export const getInfo = async () => {
-  const URL = "https://pokeapi.co/api/v2/pokemon/";
+  const URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
   const {
     data: { results },
   } = await axios.get(URL);
@@ -30,7 +30,7 @@ export const filtrado =(data)=>{
       console.log(query);
       console.log(datosFiltrar)
       let filtradofinal= datosFiltrar.filter((some)=>
-        some.name.includes(query)
+        some.name==query
 
       )
       

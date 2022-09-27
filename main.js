@@ -40,3 +40,4 @@ const handleSearch = () => {
   filterArray(q);
 };
 btnSearch.addEventListener("click", handleSearch);
+//hola

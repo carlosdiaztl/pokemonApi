@@ -1,87 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>PokeApi</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="encabezado">
-        <figure class="pokeball">
-            <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Images.png"
-                alt="logo">
-        </figure>
-        <figure class="charizard-baby">
-            <img src="https://i.pinimg.com/originals/f2/95/76/f295769d9bd3c34ffc552e837f5304ae.png" alt="pokemon">
-        </figure>
-        <h1>Pokédex_</h1>
+      <figure class="pokeball">
+        <img
+          src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Images.png"
+          alt="logo"
+        />
+      </figure>
+      <figure class="charizard-baby">
+        <img
+          src="https://i.pinimg.com/originals/f2/95/76/f295769d9bd3c34ffc552e837f5304ae.png"
+          alt="pokemon"
+        />
+      </figure>
+      <h1>Pokédex_</h1>
+      <input type="text" class="input" placeholder="Buscar" name="search" />
+      <button class="btn btn--submit" id="btnsearch">Buscar</button>
     </header>
     <main class="main-container" id="container">
-        <section class="charizard-container">
-            <div class="title">
-                <figure>
-                    <img src="https://static.vecteezy.com/system/resources/previews/001/188/706/original/flame-png.png" alt="llama">
-                </figure>
-                <h2>CHARIZARD ${pokemon.name} </h2>
-            </div>
-            <figure class="image-charizard">
-                <img src="${sprites.front_default} " alt="imgdepokemon">
-            </figure>
-        </section>
-        <article class="info-pokemon">
-            <div class="row-info">
-                <div class="row-item">
-                    <span class="title-info">No.</span>
-                    <span class="info-text">006</span>
-                </div>
-                <div class="row-item">
-                    <span class="title-info">LEVEL</span>
-                    <span class="info-text">${info.base_experience}</span>
-                </div>
-            </div>
-            <div class="row-info">
-                <div class="row-item">
-                    <span class="title-info">TYPE</span>
-                    <span class="info-text">${typepokemon} </span>
-                </div>
-                <div class="row-item">
-                    <span class="title-info">HABILITY</span>
-                    <span class="info-text">${habilidadespokemon}</span>
-                </div>
-            </div>
-            <div class="row-info">
-                <div class="row-item">
-                    <span class="title-info">HEIGHT</span>
-                    <span class="info-text">${info.height}</span>
-                </div>
-                <div class="row-item">
-                    <span class="title-info">WEIGHT</span>
-                    <span class="info-text">${info.weight}</span>
-                </div>
-            </div>
-        </article>
+      <section class="charizard-container">
+        <div class="title">
+          <figure>
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/001/188/706/original/flame-png.png"
+              alt="llama"
+            />
+          </figure>
+          <h2>CHARIZARD ${pokemon.name}</h2>
+        </div>
+        <figure class="image-charizard">
+          <img src="${sprites.front_default} " alt="imgdepokemon" />
+        </figure>
+      </section>
+      <article class="info-pokemon">
+        <div class="row-info">
+          <div class="row-item">
+            <span class="title-info">No.</span>
+            <span class="info-text">006</span>
+          </div>
+          <div class="row-item">
+            <span class="title-info">LEVEL</span>
+            <span class="info-text">${info.base_experience}</span>
+          </div>
+        </div>
+        <div class="row-info">
+          <div class="row-item">
+            <span class="title-info">TYPE</span>
+            <span class="info-text">${typepokemon} </span>
+          </div>
+          <div class="row-item">
+            <span class="title-info">HABILITY</span>
+            <span class="info-text">${habilidadespokemon}</span>
+          </div>
+        </div>
+        <div class="row-info">
+          <div class="row-item">
+            <span class="title-info">HEIGHT</span>
+            <span class="info-text">${info.height}</span>
+          </div>
+          <div class="row-item">
+            <span class="title-info">WEIGHT</span>
+            <span class="info-text">${info.weight}</span>
+          </div>
+        </div>
+      </article>
     </main>
     <footer class="footer-content">
-        <h3>OTHERS</h3>
-        <div>
-            <figure>
-                <img src="https://imagenpng.com/wp-content/uploads/2017/02/007Squirtle_Pokem.png" alt="pokemon">
-            </figure>
-            <figure>
-                <img src="https://i.pinimg.com/originals/b6/db/bb/b6dbbb8add6a9042a8b5b7e972780200.png" alt="pokemon">
-            </figure>
-            <figure>
-                <img src="https://i.pinimg.com/originals/f2/95/76/f295769d9bd3c34ffc552e837f5304ae.png" alt="pokemon">
-            </figure>
-            <figure>
-                <img src="https://www.pngplay.com/wp-content/uploads/10/Bulbasaur-Pokemon-PNG-Clipart-Background.png" alt="pokemon">
-            </figure>
-        </div>
+      <h3>OTHERS</h3>
+      <div>
+        <figure>
+          <img
+            src="https://imagenpng.com/wp-content/uploads/2017/02/007Squirtle_Pokem.png"
+            alt="pokemon"
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://i.pinimg.com/originals/b6/db/bb/b6dbbb8add6a9042a8b5b7e972780200.png"
+            alt="pokemon"
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://i.pinimg.com/originals/f2/95/76/f295769d9bd3c34ffc552e837f5304ae.png"
+            alt="pokemon"
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://www.pngplay.com/wp-content/uploads/10/Bulbasaur-Pokemon-PNG-Clipart-Background.png"
+            alt="pokemon"
+          />
+        </figure>
+      </div>
     </footer>
-    
+
     <script src="./main.js" type="module"></script>
-</body>
+  </body>
 </html>
